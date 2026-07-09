@@ -1,0 +1,1511 @@
+﻿<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grigson Hire | Equipment Hire for Film and TV Productions</title>
+<meta name="description" content="Grigson Hire supplies reliable lighting towers, vehicles, generators and production support equipment to the Film, TV and Events industry across the UK.">
+<meta name="theme-color" content="#1366AE">
+
+<meta property="og:title" content="Grigson Hire | Equipment Hire for Film and TV Productions">
+<meta property="og:description" content="Reliable equipment. Straightforward service. Built for the demands of production.">
+<meta property="og:type" content="website">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+/* ==========================================================================
+   1. CSS CUSTOM PROPERTIES / DESIGN TOKENS
+   ========================================================================== */
+:root{
+  --color-primary:#1366AE;
+  --color-primary-dark:#0F5490;
+  --color-black:#111111;
+  --color-white:#FFFFFF;
+  --color-bg-light:#F8F8F8;
+  --color-border-light:#E8E8E8;
+  --color-text-muted:#5B5F63;
+
+  --font-body:'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+  --container-max:1300px;
+  --gutter: clamp(20px, 5vw, 64px);
+  --space-section: clamp(84px, 9vw, 136px);
+  --space-header: clamp(42px, 5vw, 72px);
+  --space-grid: clamp(22px, 2.6vw, 34px);
+  --space-card: clamp(28px, 3vw, 42px);
+  --space-actions: clamp(18px, 2vw, 24px);
+
+  --radius-lg:18px;
+  --radius-md:12px;
+  --radius-sm:8px;
+
+  --shadow-soft: 0 18px 48px rgba(17,17,17,0.09);
+  --shadow-card: 0 18px 42px rgba(17,17,17,0.08);
+
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --dur-fast: 220ms;
+  --dur-med: 340ms;
+
+  --header-height: 64px;
+}
+
+/* ==========================================================================
+   2. RESET
+   ========================================================================== */
+*,*::before,*::after{ box-sizing:border-box; margin:0; padding:0; }
+html{ scroll-behavior:smooth; scroll-padding-top: var(--header-height); }
+body{
+  font-family:var(--font-body);
+  color:var(--color-black);
+  background:var(--color-white);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  overflow-x:hidden;
+  font-size:clamp(1rem, 0.98rem + 0.1vw, 1.0625rem);
+  line-height:1.72;
+}
+::selection{ background:rgba(19,102,174,0.18); color:var(--color-black); }
+img{ max-width:100%; display:block; }
+a{ color:inherit; text-decoration:none; }
+ul{ list-style:none; }
+button{ font-family:inherit; cursor:pointer; border:none; background:none; }
+h1,h2,h3,h4{
+  font-weight:800;
+  line-height:1.04;
+  letter-spacing:0;
+  text-wrap:balance;
+}
+p{ max-width:68ch; }
+p + p{ margin-top:1.05em; }
+input,textarea{ font-family:inherit; }
+
+@media (prefers-reduced-motion: reduce){
+  *{ animation-duration:0.01ms !important; animation-iteration-count:1 !important; transition-duration:0.01ms !important; scroll-behavior:auto !important; }
+}
+
+/* Visible focus states for accessibility */
+a:focus-visible,button:focus-visible,input:focus-visible{
+  outline:2px solid var(--color-primary);
+  outline-offset:3px;
+  border-radius:4px;
+}
+
+.skip-link{
+  position:absolute; left:-9999px; top:0; z-index:9999;
+  background:var(--color-primary); color:#fff; padding:12px 20px; border-radius:0 0 8px 0;
+}
+.skip-link:focus{ left:0; }
+
+/* ==========================================================================
+   3. LAYOUT UTILITIES
+   ========================================================================== */
+.container{
+  max-width:var(--container-max);
+  margin-inline:auto;
+  padding-inline:var(--gutter);
+}
+.section{
+  padding-block: var(--space-section);
+}
+.eyebrow{
+  display:inline-block;
+  position:relative;
+  font-size:clamp(0.72rem, 0.7rem + 0.1vw, 0.82rem);
+  font-weight:800;
+  letter-spacing:0.16em;
+  text-transform:uppercase;
+  color:var(--color-primary);
+  margin-bottom:20px;
+}
+.eyebrow::after{
+  content:'';
+  display:block;
+  width:32px;
+  height:1px;
+  margin-top:12px;
+  background:currentColor;
+  opacity:0.85;
+}
+.reveal{
+  opacity:0;
+  transform:translateY(18px);
+  transition:opacity 360ms var(--ease), transform 360ms var(--ease);
+  will-change:opacity, transform;
+}
+.reveal.is-visible{
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* Signature angled-badge motif, echoing the Grigson Hire logo shape */
+.angle-tag{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  background:var(--color-primary);
+  color:#fff;
+  font-weight:700;
+  font-size:0.72rem;
+  letter-spacing:0.1em;
+  text-transform:uppercase;
+  padding:8px 18px;
+  clip-path: polygon(6% 0, 100% 0, 94% 100%, 0 100%);
+}
+
+/* ==========================================================================
+   4. BUTTONS
+   ========================================================================== */
+.btn{
+  position:relative;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:12px;
+  min-height:52px;
+  padding:16px 34px;
+  border:1px solid transparent;
+  border-radius:var(--radius-md);
+  font-weight:700;
+  font-size:clamp(0.88rem, 0.86rem + 0.08vw, 0.96rem);
+  letter-spacing:0.01em;
+  line-height:1;
+  transition:
+    transform var(--dur-med) var(--ease),
+    background var(--dur-med) var(--ease),
+    box-shadow var(--dur-med) var(--ease),
+    color var(--dur-med) var(--ease),
+    border-color var(--dur-med) var(--ease),
+    opacity var(--dur-med) var(--ease);
+  white-space:nowrap;
+  touch-action:manipulation;
+}
+.btn svg{
+  width:18px;
+  height:18px;
+  flex-shrink:0;
+  transition:transform var(--dur-med) var(--ease);
+}
+.btn:hover svg{ transform:translateX(2px); }
+.btn:active{
+  transform:translateY(0) scale(0.985);
+  transition-duration:200ms;
+}
+.btn:focus-visible{
+  border-radius:var(--radius-md);
+}
+.btn-primary{
+  background:var(--color-primary);
+  color:#fff;
+  box-shadow:0 10px 24px rgba(19,102,174,0.24), inset 0 1px 0 rgba(255,255,255,0.16);
+}
+.btn-primary:hover{ background:var(--color-primary-dark); transform:translateY(-2px); box-shadow:0 16px 34px rgba(19,102,174,0.32), inset 0 1px 0 rgba(255,255,255,0.18); }
+.btn-primary:active{ box-shadow:0 6px 16px rgba(19,102,174,0.28), inset 0 2px 6px rgba(0,0,0,0.18); }
+.btn-outline{
+  background:transparent;
+  color:#fff;
+  border-color:rgba(255,255,255,0.52);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,0.08);
+}
+.btn-outline:hover{ background:rgba(255,255,255,0.12); border-color:#fff; transform:translateY(-2px); box-shadow:0 14px 30px rgba(0,0,0,0.16), inset 0 1px 0 rgba(255,255,255,0.14); }
+.btn-outline:active{ background:rgba(255,255,255,0.08); box-shadow:inset 0 2px 8px rgba(0,0,0,0.22); }
+.btn-dark{
+  background:var(--color-black);
+  color:#fff;
+  box-shadow:0 10px 24px rgba(17,17,17,0.18), inset 0 1px 0 rgba(255,255,255,0.1);
+}
+.btn-dark:hover{ background:#000; transform:translateY(-2px); box-shadow:0 16px 34px rgba(17,17,17,0.22), inset 0 1px 0 rgba(255,255,255,0.12); }
+.btn-dark:active{ box-shadow:0 6px 16px rgba(17,17,17,0.18), inset 0 2px 6px rgba(0,0,0,0.22); }
+.btn-light{
+  background:#fff;
+  color:var(--color-primary);
+  box-shadow:0 10px 24px rgba(0,0,0,0.12), inset 0 1px 0 rgba(255,255,255,0.8);
+}
+.btn-light:hover{ transform:translateY(-2px); box-shadow:0 16px 34px rgba(0,0,0,0.18), inset 0 1px 0 rgba(255,255,255,0.9); }
+.btn-light:active{ box-shadow:0 6px 16px rgba(0,0,0,0.16), inset 0 2px 8px rgba(19,102,174,0.12); }
+.btn-block-mobile{ width:100%; }
+
+/* ==========================================================================
+   5. HEADER
+   ========================================================================== */
+.site-header{
+  position:fixed;
+  top:0; left:0; right:0;
+  z-index:1000;
+  height:var(--header-height);
+  display:flex;
+  align-items:center;
+  background:transparent;
+  transition:
+    background 360ms var(--ease),
+    backdrop-filter 360ms var(--ease),
+    box-shadow 360ms var(--ease),
+    border-color 360ms var(--ease);
+  border-bottom:1px solid transparent;
+  will-change:background, backdrop-filter;
+}
+.site-header.is-scrolled{
+  background:rgba(255,255,255,0.72);
+  -webkit-backdrop-filter:blur(26px) saturate(180%);
+  backdrop-filter:blur(26px) saturate(180%);
+  box-shadow:0 1px 22px rgba(17,17,17,0.05);
+  border-bottom:1px solid rgba(17,17,17,0.07);
+}
+.header-inner{
+  width:100%;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:28px;
+}
+.brand{
+  display:flex;
+  align-items:center;
+  height:42px;
+  width:150px;
+  flex-shrink:0;
+  opacity:0.98;
+  overflow:hidden;
+  transition:opacity var(--dur-fast) var(--ease), transform var(--dur-fast) var(--ease);
+}
+.brand:hover{ opacity:1; transform:translateY(-1px); }
+.brand img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  display:block;
+  filter:drop-shadow(0 6px 14px rgba(0,0,0,0.22));
+}
+
+.main-nav{ display:flex; align-items:center; gap:clamp(28px,3.6vw,52px); }
+.main-nav a{
+  font-size:0.72rem;
+  font-weight:800;
+  letter-spacing:0.13em;
+  text-transform:uppercase;
+  color:rgba(255,255,255,0.82);
+  position:relative;
+  padding-block:9px;
+  transition:color var(--dur-fast) var(--ease), transform var(--dur-fast) var(--ease);
+}
+.main-nav a::after{
+  content:'';
+  position:absolute;
+  left:50%; bottom:1px;
+  width:18px; height:1px;
+  border-radius:999px;
+  background:var(--color-primary);
+  opacity:0;
+  transform:translateX(-50%) scaleX(0.35);
+  transition:opacity var(--dur-fast) var(--ease), transform var(--dur-fast) var(--ease), width var(--dur-fast) var(--ease);
+}
+.main-nav a:hover{ color:#fff; transform:translateY(-1px); }
+.main-nav a:hover::after{ opacity:0.72; transform:translateX(-50%) scaleX(1); }
+.main-nav a.is-active{ color:#fff; }
+.main-nav a.is-active::after{ width:28px; opacity:1; transform:translateX(-50%) scaleX(1); }
+.site-header.is-scrolled .main-nav a{ color:rgba(17,17,17,0.68); }
+.site-header.is-scrolled .main-nav a:hover{ color:var(--color-black); }
+.site-header.is-scrolled .main-nav a.is-active{ color:var(--color-primary); }
+
+.header-actions{ display:flex; align-items:center; gap:16px; }
+.header-call{
+  display:flex; align-items:center; gap:8px;
+  font-size:0.75rem; font-weight:800; letter-spacing:0.1em;
+  text-transform:uppercase;
+  color:rgba(255,255,255,0.82);
+  transition:color var(--dur-fast) var(--ease), transform var(--dur-fast) var(--ease);
+}
+.header-call:hover{ color:#fff; transform:translateY(-1px); }
+.header-call svg{ width:15px; height:15px; }
+.site-header.is-scrolled .header-call{ color:rgba(17,17,17,0.72); }
+.site-header.is-scrolled .header-call:hover{ color:var(--color-black); }
+
+.nav-toggle{
+  display:none;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  gap:4px;
+  width:44px; height:44px;
+  border-radius:999px;
+  flex-shrink:0;
+  transition:background var(--dur-med) var(--ease), transform var(--dur-med) var(--ease), box-shadow var(--dur-med) var(--ease);
+  touch-action:manipulation;
+}
+.nav-toggle:hover{ background:rgba(255,255,255,0.12); transform:translateY(-2px); box-shadow:0 10px 22px rgba(0,0,0,0.14); }
+.nav-toggle:active{ transform:scale(0.96); transition-duration:200ms; }
+.nav-toggle span{
+  width:20px; height:1.5px; background:#fff;
+  border-radius:999px;
+  transition:transform var(--dur-med) var(--ease), opacity var(--dur-med) var(--ease), background var(--dur-med) var(--ease), width var(--dur-med) var(--ease);
+}
+.nav-toggle:hover span:nth-child(2){ width:14px; }
+.site-header.is-scrolled .nav-toggle span{ background:var(--color-black); }
+.site-header.is-scrolled .nav-toggle:hover{ background:rgba(17,17,17,0.06); box-shadow:0 10px 22px rgba(17,17,17,0.08); }
+.nav-toggle[aria-expanded="true"] span:nth-child(1){ transform:translateY(5.5px) rotate(45deg); }
+.nav-toggle[aria-expanded="true"] span:nth-child(2){ opacity:0; }
+.nav-toggle[aria-expanded="true"] span:nth-child(3){ transform:translateY(-5.5px) rotate(-45deg); }
+.menu-open .nav-toggle span{ background:var(--color-black); }
+.menu-open .nav-toggle{ background:rgba(17,17,17,0.06); box-shadow:inset 0 1px 4px rgba(17,17,17,0.08); }
+
+.mobile-nav{
+  position:fixed;
+  top:var(--header-height); left:0; right:0;
+  background:rgba(255,255,255,0.86);
+  -webkit-backdrop-filter:blur(24px) saturate(180%);
+  backdrop-filter:blur(24px) saturate(180%);
+  border-bottom:1px solid rgba(17,17,17,0.08);
+  box-shadow:0 18px 34px rgba(17,17,17,0.075);
+  transform:translateY(-14px) scaleY(0.98);
+  transform-origin:top;
+  opacity:0;
+  visibility:hidden;
+  pointer-events:none;
+  transition:opacity 360ms var(--ease), transform 360ms var(--ease), visibility 360ms;
+  z-index:999;
+}
+.menu-open .mobile-nav{
+  opacity:1; transform:translateY(0) scaleY(1); visibility:visible; pointer-events:auto;
+}
+.mobile-nav-inner{ padding:10px var(--gutter) 24px; display:flex; flex-direction:column; }
+.mobile-nav a{
+  padding:15px 2px;
+  font-size:0.94rem;
+  font-weight:800;
+  letter-spacing:0.04em;
+  color:rgba(17,17,17,0.72);
+  border-bottom:1px solid rgba(17,17,17,0.08);
+  transform:translateY(-4px);
+  opacity:0;
+  transition:color var(--dur-fast) var(--ease), opacity 320ms var(--ease), transform 320ms var(--ease);
+}
+.menu-open .mobile-nav a{ opacity:1; transform:translateY(0); }
+.menu-open .mobile-nav a:nth-child(2){ transition-delay:35ms; }
+.menu-open .mobile-nav a:nth-child(3){ transition-delay:70ms; }
+.menu-open .mobile-nav a:nth-child(4){ transition-delay:105ms; }
+.menu-open .mobile-nav a:nth-child(5){ transition-delay:140ms; }
+.mobile-nav a:hover, .mobile-nav a.is-active{ color:var(--color-primary); }
+.mobile-nav .btn{
+  margin-top:24px;
+  justify-content:center;
+  color:#fff;
+  border-bottom:0;
+  padding:14px 20px;
+}
+
+/* ==========================================================================
+   6. HERO
+   ========================================================================== */
+.hero{
+  position:relative;
+  min-height:90vh;
+  display:flex;
+  align-items:center;
+  color:#fff;
+  overflow:hidden;
+  background:#05080c;
+}
+.hero::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  z-index:1;
+  pointer-events:none;
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,0.035), inset 0 -120px 120px rgba(0,0,0,0.18);
+}
+.hero-media{
+  position:absolute; inset:0;
+  z-index:0;
+}
+.hero-media img{
+  width:100%; height:100%; object-fit:cover; object-position:50% 57%;
+  transform:scale(1.055);
+  transform-origin:center center;
+}
+.hero-media::after{
+  content:'';
+  position:absolute; inset:0;
+  background:
+    radial-gradient(ellipse at 52% 48%, rgba(255,255,255,0.02) 0%, rgba(6,9,14,0.12) 34%, rgba(3,5,8,0.7) 100%),
+    linear-gradient(90deg, rgba(2,5,10,0.88) 0%, rgba(4,8,14,0.58) 31%, rgba(4,8,14,0.18) 64%, rgba(2,5,10,0.48) 100%),
+    linear-gradient(180deg, rgba(3,6,10,0.84) 0%, rgba(3,6,10,0.2) 28%, rgba(3,6,10,0.34) 58%, rgba(2,4,7,0.92) 100%);
+}
+.hero-content{
+  position:relative; z-index:2;
+  width:100%;
+  padding-block: clamp(120px, 17vh, 168px) clamp(78px, 10vh, 112px);
+}
+.hero-content .container{ max-width:var(--container-max); }
+.hero-text{
+  max-width:760px;
+  filter:drop-shadow(0 16px 42px rgba(0,0,0,0.48));
+}
+.hero-eyebrow{
+  display:flex; align-items:center; gap:14px;
+  margin-bottom:26px;
+}
+.hero-eyebrow .rule{ width:46px; height:2px; background:var(--color-primary); box-shadow:0 0 18px rgba(19,102,174,0.72); }
+.hero-eyebrow span{
+  font-size:clamp(0.72rem, 0.7rem + 0.1vw, 0.82rem); font-weight:800; letter-spacing:0.18em; text-transform:uppercase; color:rgba(255,255,255,0.92);
+}
+.hero h1{
+  font-size:clamp(2.85rem, 6.2vw, 5.18rem);
+  line-height:0.93;
+  margin-bottom:32px;
+  max-width:11ch;
+  text-wrap:balance;
+  color:#fff;
+  text-shadow:0 4px 30px rgba(0,0,0,0.62);
+}
+.hero p{
+  font-size:clamp(1.08rem, 1.45vw, 1.28rem);
+  line-height:1.62;
+  color:rgba(255,255,255,0.94);
+  max-width:42ch;
+  margin-bottom:52px;
+  text-shadow:0 3px 18px rgba(0,0,0,0.58);
+}
+.hero-actions{ display:flex; flex-wrap:wrap; gap:var(--space-actions); }
+
+/* ==========================================================================
+   7. CONTACT BAR
+   ========================================================================== */
+.contact-bar{
+  background:var(--color-primary);
+  background-image:
+    linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0) 30%),
+    linear-gradient(90deg, rgba(0,0,0,0.1), rgba(255,255,255,0.04) 48%, rgba(0,0,0,0.12)),
+    linear-gradient(180deg, rgba(7,38,68,0.08), rgba(7,38,68,0.26));
+  color:#fff;
+  position:relative;
+  overflow:hidden;
+}
+.contact-bar::before,
+.contact-bar::after{
+  content:'';
+  position:absolute;
+  left:0;
+  right:0;
+  height:1px;
+  pointer-events:none;
+}
+.contact-bar::before{
+  top:0;
+  background:rgba(255,255,255,0.18);
+}
+.contact-bar::after{
+  bottom:0;
+  background:rgba(0,0,0,0.16);
+}
+.contact-bar .container{
+  display:grid;
+  grid-template-columns:repeat(4, 1fr);
+  gap:0;
+  padding-block:clamp(36px, 3.8vw, 52px);
+}
+.contact-item{
+  position:relative;
+  display:grid;
+  grid-template-columns:auto minmax(0, 1fr);
+  align-items:flex-start;
+  gap:16px;
+  padding-inline:clamp(22px, 2.8vw, 38px);
+}
+.contact-item:first-child{ padding-left:0; }
+.contact-item:last-child{ padding-right:0; }
+.contact-item + .contact-item::before{
+  content:'';
+  position:absolute;
+  left:0;
+  top:4px;
+  bottom:4px;
+  width:1px;
+  background:linear-gradient(180deg, transparent, rgba(255,255,255,0.28), transparent);
+}
+.contact-icon{
+  width:30px; height:30px;
+  border-radius:50%;
+  background:rgba(255,255,255,0.1);
+  border:1px solid rgba(255,255,255,0.16);
+  display:flex; align-items:center; justify-content:center;
+  flex-shrink:0;
+  margin-top:2px;
+}
+.contact-icon svg{ width:14px; height:14px; stroke-width:1.8; }
+.contact-label{
+  font-size:clamp(0.66rem, 0.64rem + 0.06vw, 0.72rem);
+  font-weight:800;
+  text-transform:uppercase;
+  letter-spacing:0.18em;
+  color:rgba(255,255,255,0.62);
+  margin-bottom:8px;
+}
+.contact-value{
+  font-size:clamp(0.88rem, 0.86rem + 0.1vw, 0.98rem);
+  font-weight:700;
+  line-height:1.55;
+  letter-spacing:0;
+}
+.contact-value a{
+  display:block;
+  width:max-content;
+  max-width:100%;
+  color:rgba(255,255,255,0.94);
+  overflow-wrap:anywhere;
+  transition:color var(--dur-fast) var(--ease), opacity var(--dur-fast) var(--ease), transform var(--dur-fast) var(--ease);
+}
+.contact-value a + a{ margin-top:3px; color:rgba(255,255,255,0.78); font-weight:600; }
+.contact-value a:hover{ color:#fff; opacity:1; transform:translateX(2px); }
+.contact-socials{ display:flex; flex-direction:column; gap:9px; min-width:0; }
+.contact-socials a{
+  display:flex;
+  align-items:center;
+  gap:9px;
+  width:max-content;
+  max-width:100%;
+  font-weight:700;
+  font-size:clamp(0.86rem, 0.84rem + 0.08vw, 0.94rem);
+  line-height:1.35;
+  color:rgba(255,255,255,0.9);
+  transition:color var(--dur-fast) var(--ease), transform var(--dur-fast) var(--ease);
+}
+.contact-socials a:hover{ color:#fff; transform:translateX(2px); }
+.contact-socials svg{ width:13px; height:13px; flex-shrink:0; opacity:0.86; }
+
+/* ==========================================================================
+   8. ABOUT
+   ========================================================================== */
+.about{
+  background:var(--color-white);
+  overflow:hidden;
+}
+.about-grid{
+  display:grid;
+  grid-template-columns:minmax(0, 1.04fr) minmax(0, 0.96fr);
+  gap:clamp(72px, 8vw, 128px);
+  align-items:center;
+}
+.about-media{
+  position:relative;
+  border-radius:var(--radius-lg);
+  overflow:hidden;
+  aspect-ratio:4/3.08;
+  box-shadow:0 26px 64px rgba(17,17,17,0.13), 0 2px 0 rgba(17,17,17,0.04);
+  isolation:isolate;
+}
+.about-media::before{
+  content:'';
+  position:absolute;
+  inset:12px;
+  z-index:2;
+  border:1px solid rgba(255,255,255,0.32);
+  border-radius:var(--radius-md);
+  pointer-events:none;
+}
+.about-media::after{
+  content:'';
+  position:absolute;
+  inset:0;
+  z-index:1;
+  background:
+    linear-gradient(180deg, rgba(0,0,0,0) 54%, rgba(0,0,0,0.18) 100%),
+    linear-gradient(90deg, rgba(0,0,0,0.1), rgba(255,255,255,0.03) 42%, rgba(0,0,0,0.08));
+  pointer-events:none;
+}
+.about-media img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center 46%;
+  filter:saturate(0.96) contrast(1.04);
+  transform:scale(1);
+  transition:transform 380ms var(--ease), filter 380ms var(--ease);
+}
+.about-media:hover img{
+  transform:scale(1.025);
+  filter:saturate(0.98) contrast(1.06);
+}
+.about-body{
+  position:relative;
+  max-width:660px;
+  justify-self:end;
+  padding-block:clamp(10px, 2vw, 26px);
+}
+.about-body::before{
+  content:'';
+  position:absolute;
+  left:clamp(-44px, -3.2vw, -28px);
+  top:clamp(16px, 2.2vw, 30px);
+  width:1px;
+  height:clamp(76px, 9vw, 118px);
+  background:linear-gradient(180deg, var(--color-primary), rgba(19,102,174,0));
+}
+.about-body h2{
+  font-size:clamp(2.16rem, 3.7vw, 3.22rem);
+  line-height:1.02;
+  margin-bottom:40px;
+  max-width:13.5ch;
+}
+.about-body p{
+  color:var(--color-text-muted);
+  max-width:58ch;
+  margin-bottom:0;
+  font-size:clamp(1.02rem, 0.96rem + 0.2vw, 1.14rem);
+  line-height:1.88;
+  text-wrap:pretty;
+}
+.about-body p + p{ margin-top:1.18em; }
+.about-body p strong{ color:var(--color-black); }
+.about-signoff{
+  margin-top:48px;
+  display:flex; align-items:center; gap:20px;
+}
+.about-signoff .line{ width:56px; height:2px; background:var(--color-primary); }
+.about-signoff span{ font-weight:800; font-size:clamp(0.94rem, 0.9rem + 0.1vw, 1.02rem); line-height:1.45; color:var(--color-black); }
+
+/* ==========================================================================
+   9. EQUIPMENT
+   ========================================================================== */
+.equipment{
+  background:var(--color-black);
+  background-image:
+    radial-gradient(circle at 20% 0%, rgba(19,102,174,0.12), transparent 34%),
+    linear-gradient(180deg, #101010 0%, #080808 100%);
+  color:#fff;
+}
+.equipment-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-end;
+  gap:var(--space-header);
+  margin-bottom:var(--space-header);
+  flex-wrap:wrap;
+}
+.equipment-header h2{
+  font-size:clamp(2.08rem, 3.6vw, 3.08rem);
+  line-height:1.02;
+  max-width:13ch;
+  color:#fff;
+}
+.equipment-header .eyebrow{ color:#7fb3e0; }
+.equipment-grid{
+  display:grid;
+  grid-template-columns:repeat(2, minmax(0, 1fr));
+  gap:clamp(24px, 3vw, 36px);
+}
+.equip-card--vehicles img{ object-position:54% 58%; }
+.equip-card--lighting img{ object-position:72% 50%; }
+.equip-card--generators img{ object-position:52% 54%; }
+.equip-card--production img{ object-position:50% 58%; }
+.equip-card{
+  position:relative;
+  border-radius:var(--radius-lg);
+  overflow:hidden;
+  aspect-ratio:16/10.5;
+  background:linear-gradient(155deg, #17191d 0%, #080a0d 100%);
+  border:1px solid rgba(255,255,255,0.1);
+  box-shadow:0 22px 54px rgba(0,0,0,0.34), inset 0 1px 0 rgba(255,255,255,0.06);
+  isolation:isolate;
+  transform:translateZ(0);
+  transition:transform 360ms var(--ease), box-shadow 360ms var(--ease), border-color 360ms var(--ease);
+}
+.equip-card img{
+  position:absolute; inset:0;
+  width:100%; height:100%; object-fit:cover;
+  filter:saturate(0.9) contrast(1.08) brightness(0.86);
+  transform:scale(1.01);
+  transition:transform 400ms var(--ease), filter 400ms var(--ease);
+}
+.equip-card:hover{
+  transform:translateY(-6px);
+  border-color:rgba(255,255,255,0.18);
+  box-shadow:0 32px 74px rgba(0,0,0,0.44), inset 0 1px 0 rgba(255,255,255,0.08);
+}
+.equip-card:hover img{
+  transform:scale(1.075);
+  filter:saturate(0.96) contrast(1.12) brightness(0.92);
+}
+.equip-card::before{
+  content:'';
+  position:absolute; inset:0;
+  background:
+    radial-gradient(ellipse at 50% 24%, rgba(255,255,255,0.08), transparent 36%),
+    linear-gradient(180deg, rgba(4,6,9,0.08) 0%, rgba(4,6,9,0.18) 36%, rgba(4,6,9,0.86) 100%),
+    linear-gradient(90deg, rgba(0,0,0,0.34), transparent 42%, rgba(0,0,0,0.24));
+  z-index:1;
+  transition:opacity 360ms var(--ease), background 360ms var(--ease);
+}
+.equip-card::after{
+  content:'';
+  position:absolute;
+  inset:12px;
+  z-index:2;
+  border:1px solid rgba(255,255,255,0.12);
+  border-radius:var(--radius-md);
+  pointer-events:none;
+  opacity:0;
+  transition:opacity 360ms var(--ease);
+}
+.equip-card:hover::before{
+  background:
+    radial-gradient(ellipse at 50% 24%, rgba(255,255,255,0.1), transparent 38%),
+    linear-gradient(180deg, rgba(4,6,9,0.03) 0%, rgba(4,6,9,0.12) 38%, rgba(4,6,9,0.9) 100%),
+    linear-gradient(90deg, rgba(0,0,0,0.26), transparent 44%, rgba(0,0,0,0.2));
+}
+.equip-card:hover::after{ opacity:1; }
+.equip-card:focus-within{
+  border-color:rgba(255,255,255,0.22);
+  box-shadow:0 32px 74px rgba(0,0,0,0.44), 0 0 0 3px rgba(255,255,255,0.08);
+}
+.equip-placeholder{
+  position:absolute; inset:0;
+  display:flex; align-items:center; justify-content:center;
+  background:
+    radial-gradient(circle at 50% 42%, rgba(255,255,255,0.07), transparent 34%),
+    linear-gradient(145deg, #17191d 0%, #090b0f 100%);
+}
+.equip-placeholder svg{ width:25%; height:25%; opacity:0.32; filter:grayscale(1); }
+.equip-card-label{
+  position:absolute; left:0; right:0; bottom:0; z-index:3;
+  padding:clamp(28px, 3.2vw, 46px);
+  display:flex; align-items:flex-end; justify-content:space-between;
+  gap:clamp(18px, 2vw, 28px);
+  transform:translateY(0);
+  transition:transform 360ms var(--ease);
+}
+.equip-card-label h3{
+  font-size:clamp(1.15rem, 1rem + 0.6vw, 1.58rem);
+  line-height:1.04;
+  font-weight:800;
+  letter-spacing:0;
+  max-width:12ch;
+  text-shadow:0 8px 28px rgba(0,0,0,0.55);
+}
+.equip-card-label svg{
+  width:34px;
+  height:34px;
+  flex-shrink:0;
+  padding:8px;
+  border-radius:999px;
+  background:rgba(255,255,255,0.1);
+  border:1px solid rgba(255,255,255,0.16);
+  box-shadow:0 10px 24px rgba(0,0,0,0.24);
+  transition:transform 360ms var(--ease), background 360ms var(--ease), border-color 360ms var(--ease);
+}
+.equip-card:hover .equip-card-label{ transform:translateY(-4px); }
+.equip-card:hover .equip-card-label svg{
+  transform:translate(4px,-4px);
+  background:rgba(255,255,255,0.16);
+  border-color:rgba(255,255,255,0.28);
+}
+.equipment-cta{ text-align:center; margin-top:var(--space-header); }
+
+/* ==========================================================================
+   10. WHY CHOOSE US
+   ========================================================================== */
+.why{ background:var(--color-bg-light); }
+.why-header{ max-width:680px; margin-bottom:calc(var(--space-header) * 0.9); }
+.why-header h2{ font-size:clamp(2rem, 3.5vw, 3rem); line-height:1.02; max-width:13ch; }
+.why-grid{
+  display:grid;
+  grid-template-columns:repeat(4, 1fr);
+  gap:var(--space-grid);
+}
+.why-card{
+  position:relative;
+  overflow:hidden;
+  background:#fff;
+  border:1px solid var(--color-border-light);
+  border-radius:var(--radius-md);
+  padding:var(--space-card) clamp(26px, 2.8vw, 36px);
+  box-shadow:0 1px 0 rgba(17,17,17,0.02);
+  transition:transform var(--dur-med) var(--ease), box-shadow var(--dur-med) var(--ease), border-color var(--dur-med) var(--ease);
+}
+.why-card::before{
+  content:'';
+  position:absolute;
+  left:clamp(26px, 2.8vw, 36px);
+  right:clamp(26px, 2.8vw, 36px);
+  top:0;
+  height:2px;
+  background:var(--color-primary);
+  opacity:0.72;
+  transform:scaleX(0.42);
+  transform-origin:left;
+  transition:transform var(--dur-med) var(--ease), opacity var(--dur-med) var(--ease);
+}
+.why-card:hover{ transform:translateY(-4px); box-shadow:var(--shadow-card); border-color:rgba(17,17,17,0.04); }
+.why-card:hover::before{ opacity:1; transform:scaleX(1); }
+.why-icon{
+  width:50px; height:50px;
+  border-radius:var(--radius-sm);
+  background:rgba(19,102,174,0.075);
+  display:flex; align-items:center; justify-content:center;
+  margin-bottom:28px;
+}
+.why-icon svg{ width:24px; height:24px; stroke:var(--color-primary); }
+.why-card h3{ font-size:clamp(1.04rem, 0.98rem + 0.2vw, 1.18rem); line-height:1.18; margin-bottom:16px; }
+.why-card p{ color:var(--color-text-muted); font-size:clamp(0.94rem, 0.9rem + 0.12vw, 1rem); line-height:1.72; max-width:32ch; }
+
+/* ==========================================================================
+   11. CTA
+   ========================================================================== */
+.cta{
+  background:var(--color-primary);
+  background-image:
+    linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0) 34%),
+    radial-gradient(circle at 15% 20%, rgba(255,255,255,0.08), transparent 45%),
+    linear-gradient(180deg, rgba(0,0,0,0.02), rgba(0,0,0,0.16));
+  color:#fff;
+  text-align:center;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,0.12), inset 0 -1px 0 rgba(0,0,0,0.16);
+}
+.cta h2{
+  font-size:clamp(2.18rem, 4.2vw, 3.55rem);
+  line-height:1.02;
+  max-width:18ch;
+  margin-inline:auto;
+  margin-bottom:48px;
+  text-wrap:balance;
+}
+.cta-actions{
+  display:flex; justify-content:center; flex-wrap:wrap; gap:var(--space-actions);
+}
+
+/* ==========================================================================
+   12. FOOTER
+   ========================================================================== */
+.site-footer{
+  background:var(--color-black);
+  background-image:linear-gradient(180deg, #121212 0%, #080808 100%);
+  color:rgba(255,255,255,0.72);
+}
+.footer-top{
+  display:grid;
+  grid-template-columns:1.4fr 1fr 1fr 1fr;
+  gap:clamp(48px, 5.4vw, 80px);
+  padding-block:clamp(76px, 8vw, 112px) clamp(56px, 6vw, 76px);
+  border-bottom:1px solid rgba(255,255,255,0.1);
+}
+.footer-brand img{
+  width:180px;
+  height:auto;
+  display:block;
+  margin-bottom:30px;
+  filter:drop-shadow(0 8px 18px rgba(0,0,0,0.28));
+}
+.footer-brand p{ font-size:clamp(0.92rem, 0.88rem + 0.12vw, 1rem); max-width:34ch; line-height:1.82; }
+.footer-heading{
+  font-size:clamp(0.7rem, 0.68rem + 0.08vw, 0.76rem); font-weight:800; text-transform:uppercase; letter-spacing:0.14em;
+  color:#fff; margin-bottom:24px;
+}
+.footer-col ul{ display:flex; flex-direction:column; gap:16px; }
+.footer-col a{ display:inline-block; font-size:clamp(0.92rem, 0.88rem + 0.12vw, 1rem); line-height:1.55; transition:color var(--dur-fast) var(--ease), transform var(--dur-fast) var(--ease); }
+.footer-col a:hover{ color:#fff; transform:translateX(2px); }
+.footer-socials{ display:flex; gap:14px; margin-top:10px; }
+.footer-socials a{
+  width:40px; height:40px; border-radius:50%;
+  background:rgba(255,255,255,0.08);
+  display:flex; align-items:center; justify-content:center;
+  transition:background var(--dur-med) var(--ease), transform var(--dur-med) var(--ease);
+}
+.footer-socials a:hover{ background:var(--color-primary); transform:translateY(-2px); }
+.footer-socials svg{ width:16px; height:16px; }
+.footer-bottom{
+  display:flex; justify-content:space-between; align-items:center;
+  padding-block:34px;
+  flex-wrap:wrap; gap:16px;
+  font-size:clamp(0.8rem, 0.78rem + 0.08vw, 0.86rem);
+  line-height:1.6;
+}
+
+/* ==========================================================================
+   13. RESPONSIVE - TABLET
+   ========================================================================== */
+@media (max-width: 1024px){
+  .about-grid{ grid-template-columns:1fr; gap:clamp(52px, 7vw, 76px); }
+  .about-media{ aspect-ratio:16/10; max-width:860px; }
+  .about-body{ max-width:720px; justify-self:start; padding-block:0; }
+  .about-body h2{ max-width:16ch; }
+  .equipment-grid{ grid-template-columns:repeat(2, minmax(0, 1fr)); gap:clamp(22px, 4vw, 32px); }
+  .why-grid{ grid-template-columns:repeat(2, 1fr); }
+  .footer-top{ grid-template-columns:1fr 1fr; gap:clamp(42px, 6vw, 64px); }
+}
+
+@media (max-width: 860px){
+  .main-nav, .header-call{ display:none; }
+  .nav-toggle{ display:flex; }
+  .contact-bar .container{
+    grid-template-columns:repeat(2, 1fr);
+    row-gap:28px;
+    padding-block:34px;
+  }
+  .contact-item{ padding-inline:0; padding-right:clamp(18px, 5vw, 34px); }
+  .contact-item:nth-child(even){ padding-right:0; padding-left:clamp(18px, 5vw, 34px); }
+  .contact-item + .contact-item::before{ display:none; }
+  .contact-item:nth-child(even)::before{
+    content:'';
+    display:block;
+    position:absolute;
+    left:0;
+    top:4px;
+    bottom:4px;
+    width:1px;
+    background:linear-gradient(180deg, transparent, rgba(255,255,255,0.24), transparent);
+  }
+}
+
+/* ==========================================================================
+   14. RESPONSIVE - MOBILE
+   ========================================================================== */
+@media (max-width: 600px){
+  :root{
+    --header-height:60px;
+    --gutter:clamp(18px, 5.6vw, 24px);
+    --space-section:clamp(64px, 17vw, 88px);
+    --space-header:clamp(34px, 9vw, 48px);
+    --space-grid:18px;
+    --space-card:30px;
+    --space-actions:16px;
+  }
+  body{ font-size:1rem; line-height:1.68; overflow-x:hidden; }
+  .container{ width:100%; }
+  .header-inner{ gap:16px; }
+  .brand{ width:138px; height:38px; min-width:0; }
+  .nav-toggle{ width:46px; height:46px; }
+  .mobile-nav-inner{ padding:12px var(--gutter) 28px; }
+  .mobile-nav a{
+    min-height:50px;
+    display:flex;
+    align-items:center;
+    padding:14px 2px;
+    font-size:0.9rem;
+  }
+  .mobile-nav .btn{
+    min-height:54px;
+    margin-top:18px;
+    padding-inline:20px;
+    width:100%;
+  }
+  .btn{
+    min-height:54px;
+    padding:17px 22px;
+    border-radius:var(--radius-md);
+    width:fit-content;
+    max-width:100%;
+  }
+  .eyebrow{ margin-bottom:16px; }
+  .eyebrow::after{ width:28px; margin-top:10px; }
+  .hero{
+    min-height:75vh;
+    min-height:75svh;
+  }
+  .hero-media img{ object-position:60% 52%; transform:scale(1.1); }
+  .hero-media::after{
+    background:
+      radial-gradient(ellipse at 54% 38%, rgba(255,255,255,0.02) 0%, rgba(4,7,11,0.28) 35%, rgba(2,4,7,0.76) 100%),
+      linear-gradient(90deg, rgba(2,5,10,0.88) 0%, rgba(4,8,14,0.62) 46%, rgba(4,8,14,0.28) 100%),
+      linear-gradient(180deg, rgba(3,6,10,0.76) 0%, rgba(3,6,10,0.22) 26%, rgba(2,4,7,0.92) 100%);
+  }
+  .hero-content{ padding-block: clamp(92px,18svh,118px) clamp(52px,8svh,68px); }
+  .hero-text{ max-width:100%; }
+  .hero-eyebrow{ margin-bottom:18px; gap:10px; }
+  .hero-eyebrow .rule{ width:34px; }
+  .hero-eyebrow span{ font-size:0.68rem; letter-spacing:0.13em; }
+  .hero h1{ font-size:clamp(2.12rem, 10.2vw, 2.82rem); line-height:0.98; margin-bottom:22px; max-width:10.5ch; }
+  .hero p{ font-size:clamp(0.98rem, 3.7vw, 1.08rem); line-height:1.58; margin-bottom:36px; max-width:30ch; }
+  .hero-actions{ flex-direction:column; align-items:stretch; }
+  .hero-actions .btn{ width:100%; }
+
+  .contact-bar .container{ grid-template-columns:1fr; gap:0; padding-block:0; }
+  .contact-item,
+  .contact-item:nth-child(even){
+    padding:20px 0;
+    grid-template-columns:28px minmax(0, 1fr);
+    gap:14px;
+  }
+  .contact-item + .contact-item{ border-top:1px solid rgba(255,255,255,0.16); }
+  .contact-item:nth-child(even)::before{ display:none; }
+  .contact-icon{ width:28px; height:28px; }
+  .contact-icon svg{ width:13px; height:13px; }
+  .contact-label{ margin-bottom:6px; }
+  .contact-value a,
+  .contact-socials a{ width:auto; overflow-wrap:anywhere; }
+  .contact-socials{ gap:8px; }
+
+  .about-grid{ gap:38px; }
+  .about-media{ aspect-ratio:4/3; border-radius:var(--radius-md); }
+  .about-media::before{ inset:8px; border-radius:var(--radius-sm); }
+  .about-body::before{ display:none; }
+  .about-body h2, .equipment-header h2, .why-header h2, .cta h2{ max-width:100%; }
+  .about-body h2{ font-size:clamp(2rem, 9vw, 2.62rem); margin-bottom:30px; }
+  .about-body p{ font-size:1rem; line-height:1.78; max-width:100%; }
+  .about-body p + p{ margin-top:1.08em; }
+  .about-signoff{ margin-top:38px; gap:16px; }
+  .about-signoff .line{ width:44px; }
+
+  .equipment-grid{ grid-template-columns:1fr; gap:20px; }
+  .equip-card{ aspect-ratio:16/10.8; border-radius:var(--radius-md); }
+  .equip-card::after{ inset:8px; border-radius:var(--radius-sm); }
+  .equip-card--vehicles img{ object-position:49% 58%; }
+  .equip-card--lighting img{ object-position:72% 50%; }
+  .equip-card--generators img{ object-position:50% 55%; }
+  .equip-card--production img{ object-position:47% 60%; }
+  .equip-card-label{ padding:24px; gap:18px; }
+  .equip-card-label h3{ font-size:clamp(1.14rem, 5vw, 1.42rem); line-height:1.06; }
+  .equip-card-label svg{ width:32px; height:32px; padding:8px; }
+  .equipment-header{ flex-direction:column; align-items:flex-start; gap:24px; }
+  .equipment-header h2, .why-header h2{ font-size:clamp(1.92rem, 8vw, 2.52rem); }
+
+  .why-grid{ grid-template-columns:1fr; }
+  .why-header{ margin-bottom:var(--space-header); }
+  .why-icon{ margin-bottom:24px; }
+  .why-card h3{ font-size:1.08rem; }
+  .why-card p{ max-width:100%; }
+  .why-card{ padding:28px 24px; }
+
+  .cta-actions{ flex-direction:column; align-items:stretch; }
+  .cta-actions .btn{ width:100%; }
+  .cta h2{ font-size:clamp(1.9rem, 8.4vw, 2.45rem); margin-bottom:34px; }
+
+  .footer-top{ grid-template-columns:1fr; gap:38px; padding-block:58px 42px; }
+  .footer-brand p{ max-width:100%; }
+  .footer-col ul{ gap:13px; }
+  .footer-col a,
+  .footer-bottom{ overflow-wrap:anywhere; }
+  .footer-bottom{ flex-direction:column; align-items:flex-start; padding-block:26px; gap:10px; }
+}
+
+@media (max-width: 380px){
+  :root{
+    --gutter:18px;
+    --space-section:62px;
+    --space-header:34px;
+  }
+  .brand{ width:128px; height:36px; }
+  .mobile-nav a{ min-height:48px; font-size:0.88rem; }
+  .btn{ min-height:52px; padding:16px 18px; font-size:0.88rem; }
+  .hero{
+    min-height:74vh;
+    min-height:74svh;
+  }
+  .hero-content{ padding-block:88px 50px; }
+  .hero h1{ font-size:clamp(2rem, 10vw, 2.32rem); margin-bottom:20px; }
+  .hero p{ font-size:0.98rem; margin-bottom:32px; max-width:28ch; }
+  .hero-eyebrow span{ font-size:0.64rem; }
+  .contact-item,
+  .contact-item:nth-child(even){ padding:18px 0; grid-template-columns:26px minmax(0, 1fr); gap:12px; }
+  .contact-icon{ width:26px; height:26px; }
+  .about-grid{ gap:34px; }
+  .about-body h2,
+  .equipment-header h2,
+  .why-header h2{ font-size:clamp(1.78rem, 8vw, 2.12rem); }
+  .about-body p{ font-size:0.96rem; line-height:1.72; }
+  .equip-card{ aspect-ratio:4/3.1; }
+  .equip-card-label{ padding:20px; }
+  .why-card{ padding:26px 22px; }
+  .footer-top{ gap:34px; padding-block:52px 38px; }
+}
+
+@media (max-width: 340px){
+  :root{ --gutter:16px; }
+  .hero h1{ font-size:1.92rem; }
+  .hero p{ max-width:26ch; }
+  .hero-actions{ gap:12px; }
+  .btn{ padding-inline:16px; }
+  .equip-card-label{ padding:18px; }
+  .equip-card-label h3{ font-size:1.08rem; }
+  .footer-socials{ gap:10px; }
+}
+</style>
+</head>
+<body>
+
+<a href="#main" class="skip-link">Skip to content</a>
+
+<header class="site-header" id="siteHeader">
+  <div class="container header-inner">
+    <a href="#home" class="brand" aria-label="Grigson Hire home">
+      <img src="grigson-logo.png" alt="Grigson Hire" width="220" height="75" decoding="async">
+    </a>
+
+    <nav class="main-nav" aria-label="Primary">
+      <a href="#home" class="is-active">Home</a>
+      <a href="#about">About</a>
+      <a href="#equipment">Equipment</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="header-actions">
+      <a href="tel:+447789383848" class="header-call">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        <span>Call us</span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobileNav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+
+  <div class="mobile-nav" id="mobileNav">
+    <div class="mobile-nav-inner">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#equipment">Equipment</a>
+      <a href="#contact">Contact</a>
+      <a href="tel:+447789383848" class="btn btn-primary btn-block-mobile">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        Call us
+      </a>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="hero" id="home">
+    <div class="hero-media">
+      <img src="hero-main.png" alt="Grigson Hire Toyota Hilux towing lighting towers" width="1680" height="945" fetchpriority="high" decoding="async">
+    </div>
+    <div class="hero-content">
+      <div class="container">
+        <div class="hero-text">
+          <div class="hero-eyebrow"><span class="rule" aria-hidden="true"></span><span>Film, TV &amp; Events Equipment</span></div>
+          <h1>Equipment hire for film and TV productions</h1>
+          <p>Reliable equipment, clear communication and support that fits the way productions work.</p>
+          <div class="hero-actions">
+            <a href="#equipment" class="btn btn-primary">
+              View equipment
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+            <a href="#contact" class="btn btn-outline">Get in touch</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact-bar" aria-label="Quick contact details">
+    <div class="container">
+      <div class="contact-item">
+        <span class="contact-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        </span>
+        <div>
+          <div class="contact-label">Ned</div>
+          <div class="contact-value">
+            <a href="tel:+447789383848">+44 (0) 7789 383848</a>
+            <a href="mailto:ned@grigsonhire.co.uk">Ned@grigsonhire.co.uk</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-item">
+        <span class="contact-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        </span>
+        <div>
+          <div class="contact-label">Billy</div>
+          <div class="contact-value">
+            <a href="tel:+447464708234">+44 (0) 7464 708234</a>
+            <a href="mailto:billy@grigsonhire.co.uk">billy@grigsonhire.co.uk</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-item">
+        <span class="contact-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+        </span>
+        <div>
+          <div class="contact-label">Sales enquiries</div>
+          <div class="contact-value">
+            <a href="mailto:sales@grigsonhire.co.uk">sales@grigsonhire.co.uk</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-item">
+        <span class="contact-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
+        </span>
+        <div class="contact-socials">
+          <div class="contact-label">Follow</div>
+          <a href="https://instagram.com/grigsonhire" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2c2.72 0 3.06.01 4.12.06 1.06.05 1.79.22 2.43.47.66.26 1.22.6 1.77 1.15.55.55.89 1.11 1.15 1.77.25.64.42 1.37.47 2.43.05 1.06.06 1.4.06 4.12s-.01 3.06-.06 4.12c-.05 1.06-.22 1.79-.47 2.43a4.92 4.92 0 0 1-1.15 1.77 4.92 4.92 0 0 1-1.77 1.15c-.64.25-1.37.42-2.43.47-1.06.05-1.4.06-4.12.06s-3.06-.01-4.12-.06c-1.06-.05-1.79-.22-2.43-.47a4.92 4.92 0 0 1-1.77-1.15 4.92 4.92 0 0 1-1.15-1.77c-.25-.64-.42-1.37-.47-2.43C2.01 15.06 2 14.72 2 12s.01-3.06.06-4.12c.05-1.06.22-1.79.47-2.43.26-.66.6-1.22 1.15-1.77A4.92 4.92 0 0 1 5.45 2.53c.64-.25 1.37-.42 2.43-.47C8.94 2.01 9.28 2 12 2zm0 5a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 8.2a3.2 3.2 0 1 1 0-6.4 3.2 3.2 0 0 1 0 6.4zm5.2-8.4a1.2 1.2 0 1 1 0-2.4 1.2 1.2 0 0 1 0 2.4z"/></svg>
+            @grigsonhire
+          </a>
+          <a href="https://linkedin.com/company/grigsonhireservices" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.03-1.85-3.03-1.85 0-2.14 1.45-2.14 2.94v5.66H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/></svg>
+            @grigsonhireservices
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about section" id="about">
+    <div class="container about-grid">
+      <div class="about-media reveal">
+        <img src="grigson-founders.jpg" alt="Grigson Hire founders Ned and Billy" width="2048" height="1365" loading="lazy" decoding="async">
+      </div>
+      <div class="about-body reveal">
+        <span class="eyebrow">About Grigson Hire</span>
+        <h2>Built on experience.<br>Driven by family.</h2>
+        <p>Grigson Hire is a film and TV equipment hire company run by Ned and Billy Grigson.</p>
+        <p>We support productions with reliable kit, clear communication and a practical understanding of what Location Departments need day to day.</p>
+        <p>This has been a long time coming. Over the past year we have spent a lot of time working out how we wanted to do things properly, and why it mattered to us.</p>
+        <p>Three years ago, we lost our Dad, <strong>Neil</strong>, who many people in the Film and TV locations world may have known. Starting this company felt like the right way to carry that connection forward and build something in an industry he cared deeply about.</p>
+        <p>For us, this is about doing the basics well. Good kit, efficient turnaround, honest service and relationships built properly over time.</p>
+        <div class="about-signoff">
+          <span class="line" aria-hidden="true"></span>
+          <span>We're just getting started.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="equipment section" id="equipment">
+    <div class="container">
+      <div class="equipment-header reveal">
+        <div>
+          <span class="eyebrow">Equipment we supply</span>
+          <h2>Professional kit. Production ready.</h2>
+        </div>
+        <a href="#contact" class="angle-tag">Ask about hire</a>
+      </div>
+
+      <div class="equipment-grid">
+
+        <article class="equip-card equip-card--vehicles reveal">
+          <img src="grigson-vehicles.png" alt="Grigson Hire Toyota Hilux support vehicle" width="1680" height="945" loading="lazy" decoding="async">
+          <div class="equip-card-label">
+            <h3>Vehicles</h3>
+            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg>
+          </div>
+        </article>
+
+        <article class="equip-card equip-card--lighting reveal">
+          <img src="grigson-lighting-towers.png" alt="Trailer loaded with Grigson Hire lighting towers" width="1680" height="945" loading="lazy" decoding="async">
+          <div class="equip-card-label">
+            <h3>Lighting Towers</h3>
+            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg>
+          </div>
+        </article>
+
+        <article class="equip-card equip-card--generators reveal">
+          <img src="grigson-generator.png" alt="Towable black generator for film and TV production power" width="1536" height="864" loading="lazy" decoding="async">
+          <div class="equip-card-label">
+            <h3>Generators</h3>
+            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg>
+          </div>
+        </article>
+
+        <article class="equip-card equip-card--production reveal">
+          <img src="grigson-production-support.png" alt="Production support flight cases cable ramps and location kit" width="1536" height="864" loading="lazy" decoding="async">
+          <div class="equip-card-label">
+            <h3>Production Support</h3>
+            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg>
+          </div>
+        </article>
+
+      </div>
+      <div class="equipment-cta reveal">
+        <a href="#contact" class="btn btn-primary">
+          View full range
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="why section">
+    <div class="container">
+      <div class="why-header reveal">
+        <span class="eyebrow">Why choose us</span>
+        <h2>Straightforward, from first call to wrap.</h2>
+      </div>
+
+      <div class="why-grid">
+        <div class="why-card reveal">
+          <span class="why-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </span>
+          <h3>Reliable Equipment</h3>
+          <p>Quality kit maintained properly and ready when your production needs it.</p>
+        </div>
+
+        <div class="why-card reveal">
+          <span class="why-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </span>
+          <h3>Industry Experience</h3>
+          <p>Built with a real understanding of what Location Departments need, and when.</p>
+        </div>
+
+        <div class="why-card reveal">
+          <span class="why-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          </span>
+          <h3>Rapid Turnaround</h3>
+          <p>Fast responses, efficient delivery, and quick turnaround when schedules shift.</p>
+        </div>
+
+        <div class="why-card reveal">
+          <span class="why-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          </span>
+          <h3>Straightforward Service</h3>
+          <p>No unnecessary complications. Just dependable support and a friendly voice on the phone.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta section" id="contact">
+    <div class="container">
+      <h2>Need equipment for your next production?</h2>
+      <div class="cta-actions">
+        <a href="tel:+447789383848" class="btn btn-light">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          Call us
+        </a>
+        <a href="mailto:sales@grigsonhire.co.uk" class="btn btn-outline">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          Email us
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-top">
+    <div class="footer-brand">
+      <img src="grigson-logo.png" alt="Grigson Hire" width="160" height="55" loading="lazy" decoding="async">
+      <p>Supplying reliable equipment to the Film, TV and Events industry. Built on experience, driven by family.</p>
+      <div class="footer-socials">
+        <a href="https://instagram.com/grigsonhire" target="_blank" rel="noopener noreferrer" aria-label="Grigson Hire on Instagram">
+          <svg viewBox="0 0 24 24" fill="currentColor" style="color:#fff" aria-hidden="true"><path d="M12 2c2.72 0 3.06.01 4.12.06 1.06.05 1.79.22 2.43.47.66.26 1.22.6 1.77 1.15.55.55.89 1.11 1.15 1.77.25.64.42 1.37.47 2.43.05 1.06.06 1.4.06 4.12s-.01 3.06-.06 4.12c-.05 1.06-.22 1.79-.47 2.43a4.92 4.92 0 0 1-1.15 1.77 4.92 4.92 0 0 1-1.77 1.15c-.64.25-1.37.42-2.43.47-1.06.05-1.4.06-4.12.06s-3.06-.01-4.12-.06c-1.06-.05-1.79-.22-2.43-.47a4.92 4.92 0 0 1-1.77-1.15 4.92 4.92 0 0 1-1.15-1.77c-.25-.64-.42-1.37-.47-2.43C2.01 15.06 2 14.72 2 12s.01-3.06.06-4.12c.05-1.06.22-1.79.47-2.43.26-.66.6-1.22 1.15-1.77A4.92 4.92 0 0 1 5.45 2.53c.64-.25 1.37-.42 2.43-.47C8.94 2.01 9.28 2 12 2zm0 5a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 8.2a3.2 3.2 0 1 1 0-6.4 3.2 3.2 0 0 1 0 6.4zm5.2-8.4a1.2 1.2 0 1 1 0-2.4 1.2 1.2 0 0 1 0 2.4z"/></svg>
+        </a>
+        <a href="https://linkedin.com/company/grigsonhireservices" target="_blank" rel="noopener noreferrer" aria-label="Grigson Hire on LinkedIn">
+          <svg viewBox="0 0 24 24" fill="currentColor" style="color:#fff" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.03-1.85-3.03-1.85 0-2.14 1.45-2.14 2.94v5.66H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <nav class="footer-col" aria-label="Quick links">
+      <div class="footer-heading">Quick Links</div>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#equipment">Equipment</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="footer-col">
+      <div class="footer-heading">Contact</div>
+      <ul>
+        <li><a href="tel:+447789383848">Ned: +44 (0) 7789 383848</a></li>
+        <li><a href="mailto:ned@grigsonhire.co.uk">Ned@grigsonhire.co.uk</a></li>
+        <li><a href="tel:+447464708234">Billy: +44 (0) 7464 708234</a></li>
+        <li><a href="mailto:billy@grigsonhire.co.uk">billy@grigsonhire.co.uk</a></li>
+        <li><a href="mailto:sales@grigsonhire.co.uk">sales@grigsonhire.co.uk</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <div class="footer-heading">Follow</div>
+      <ul>
+        <li><a href="https://instagram.com/grigsonhire" target="_blank" rel="noopener noreferrer">@grigsonhire</a></li>
+        <li><a href="https://linkedin.com/company/grigsonhireservices" target="_blank" rel="noopener noreferrer">@grigsonhireservices</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="container footer-bottom">
+    <span>&copy; <span id="year"></span> Grigson Hire. All rights reserved.</span>
+    <span>Supplying equipment to the Film, TV &amp; Events industry.</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+
+  // Set current year
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Header scroll state
+  var header = document.getElementById('siteHeader');
+  var scrollThreshold = 40;
+  function onScroll(){
+    if(window.scrollY > scrollThreshold){
+      header.classList.add('is-scrolled');
+    } else {
+      header.classList.remove('is-scrolled');
+    }
+  }
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive:true });
+
+  // Mobile nav toggle
+  var toggle = document.getElementById('navToggle');
+  var mobileNav = document.getElementById('mobileNav');
+  function closeMenu(){
+    document.body.classList.remove('menu-open');
+    toggle.setAttribute('aria-expanded','false');
+  }
+  toggle.addEventListener('click', function(){
+    var isOpen = document.body.classList.toggle('menu-open');
+    toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  });
+  mobileNav.querySelectorAll('a').forEach(function(link){
+    link.addEventListener('click', closeMenu);
+  });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape') closeMenu();
+  });
+
+  // Active nav link on scroll (simple section spy)
+  var sections = ['home','about','equipment','contact'].map(function(id){
+    return document.getElementById(id);
+  }).filter(Boolean);
+  var navLinks = document.querySelectorAll('.main-nav a, .mobile-nav a[href^="#"]');
+  function onSpy(){
+    var scrollPos = window.scrollY + 140;
+    var current = sections[0];
+    sections.forEach(function(sec){
+      if(sec.offsetTop <= scrollPos) current = sec;
+    });
+    navLinks.forEach(function(link){
+      link.classList.toggle('is-active', link.getAttribute('href') === '#' + current.id);
+    });
+  }
+  onSpy();
+  window.addEventListener('scroll', onSpy, { passive:true });
+
+  // Reveal-on-scroll animation
+  var revealEls = document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          entry.target.classList.add('is-visible');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold:0.15, rootMargin:'0px 0px -60px 0px' });
+    revealEls.forEach(function(el){ io.observe(el); });
+  } else {
+    revealEls.forEach(function(el){ el.classList.add('is-visible'); });
+  }
+})();
+</script>
+
+</body>
+</html>
