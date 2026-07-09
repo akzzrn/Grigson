@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Grigson Hire | Equipment Hire for Film and TV Productions</title>
-<meta name="description" content="Grigson Hire supplies reliable lighting towers, vehicles, generators and production support equipment to the Film, TV and Events industry across the UK.">
+<title>Grigson Hire | Equipment Hire for Film, TV &amp; Events</title>
+<meta name="description" content="Grigson Hire supplies reliable equipment to the Film, TV and Events industry across the UK.">
 <meta name="theme-color" content="#1366AE">
 
-<meta property="og:title" content="Grigson Hire | Equipment Hire for Film and TV Productions">
-<meta property="og:description" content="Reliable equipment. Straightforward service. Built for the demands of production.">
+<meta property="og:title" content="Grigson Hire | Equipment Hire for Film, TV &amp; Events">
+<meta property="og:description" content="Reliable equipment and straightforward service for Film, TV and Events.">
 <meta property="og:type" content="website">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -420,17 +420,18 @@ a:focus-visible,button:focus-visible,input:focus-visible{
   z-index:0;
 }
 .hero-media img{
-  width:100%; height:100%; object-fit:cover; object-position:50% 57%;
-  transform:scale(1.055);
+  width:100%; height:100%; object-fit:cover; object-position:56% 56%;
+  transform:scale(1.04);
   transform-origin:center center;
+  filter:brightness(1.08) contrast(1.04) saturate(1.02);
 }
 .hero-media::after{
   content:'';
   position:absolute; inset:0;
   background:
-    radial-gradient(ellipse at 52% 48%, rgba(255,255,255,0.02) 0%, rgba(6,9,14,0.12) 34%, rgba(3,5,8,0.7) 100%),
-    linear-gradient(90deg, rgba(2,5,10,0.88) 0%, rgba(4,8,14,0.58) 31%, rgba(4,8,14,0.18) 64%, rgba(2,5,10,0.48) 100%),
-    linear-gradient(180deg, rgba(3,6,10,0.84) 0%, rgba(3,6,10,0.2) 28%, rgba(3,6,10,0.34) 58%, rgba(2,4,7,0.92) 100%);
+    radial-gradient(ellipse at 56% 48%, rgba(255,255,255,0.04) 0%, rgba(6,9,14,0.08) 34%, rgba(3,5,8,0.52) 100%),
+    linear-gradient(90deg, rgba(2,5,10,0.78) 0%, rgba(4,8,14,0.48) 32%, rgba(4,8,14,0.12) 66%, rgba(2,5,10,0.34) 100%),
+    linear-gradient(180deg, rgba(3,6,10,0.72) 0%, rgba(3,6,10,0.12) 30%, rgba(3,6,10,0.22) 58%, rgba(2,4,7,0.78) 100%);
 }
 .hero-content{
   position:relative; z-index:2;
@@ -442,30 +443,14 @@ a:focus-visible,button:focus-visible,input:focus-visible{
   max-width:760px;
   filter:drop-shadow(0 16px 42px rgba(0,0,0,0.48));
 }
-.hero-eyebrow{
-  display:flex; align-items:center; gap:14px;
-  margin-bottom:26px;
-}
-.hero-eyebrow .rule{ width:46px; height:2px; background:var(--color-primary); box-shadow:0 0 18px rgba(19,102,174,0.72); }
-.hero-eyebrow span{
-  font-size:clamp(0.72rem, 0.7rem + 0.1vw, 0.82rem); font-weight:800; letter-spacing:0.18em; text-transform:uppercase; color:rgba(255,255,255,0.92);
-}
 .hero h1{
-  font-size:clamp(2.85rem, 6.2vw, 5.18rem);
-  line-height:0.93;
-  margin-bottom:32px;
-  max-width:11ch;
+  font-size:clamp(3.05rem, 6.4vw, 5.35rem);
+  line-height:0.94;
+  margin-bottom:44px;
+  max-width:12.5ch;
   text-wrap:balance;
   color:#fff;
   text-shadow:0 4px 30px rgba(0,0,0,0.62);
-}
-.hero p{
-  font-size:clamp(1.08rem, 1.45vw, 1.28rem);
-  line-height:1.62;
-  color:rgba(255,255,255,0.94);
-  max-width:42ch;
-  margin-bottom:52px;
-  text-shadow:0 3px 18px rgba(0,0,0,0.58);
 }
 .hero-actions{ display:flex; flex-wrap:wrap; gap:var(--space-actions); }
 
@@ -642,12 +627,6 @@ a:focus-visible,button:focus-visible,input:focus-visible{
   height:clamp(76px, 9vw, 118px);
   background:linear-gradient(180deg, var(--color-primary), rgba(19,102,174,0));
 }
-.about-body h2{
-  font-size:clamp(2.16rem, 3.7vw, 3.22rem);
-  line-height:1.02;
-  margin-bottom:40px;
-  max-width:13.5ch;
-}
 .about-body p{
   color:var(--color-text-muted);
   max-width:58ch;
@@ -666,144 +645,7 @@ a:focus-visible,button:focus-visible,input:focus-visible{
 .about-signoff span{ font-weight:800; font-size:clamp(0.94rem, 0.9rem + 0.1vw, 1.02rem); line-height:1.45; color:var(--color-black); }
 
 /* ==========================================================================
-   9. EQUIPMENT
-   ========================================================================== */
-.equipment{
-  background:var(--color-black);
-  background-image:
-    radial-gradient(circle at 20% 0%, rgba(19,102,174,0.12), transparent 34%),
-    linear-gradient(180deg, #101010 0%, #080808 100%);
-  color:#fff;
-}
-.equipment-header{
-  display:flex;
-  justify-content:space-between;
-  align-items:flex-end;
-  gap:var(--space-header);
-  margin-bottom:var(--space-header);
-  flex-wrap:wrap;
-}
-.equipment-header h2{
-  font-size:clamp(2.08rem, 3.6vw, 3.08rem);
-  line-height:1.02;
-  max-width:13ch;
-  color:#fff;
-}
-.equipment-header .eyebrow{ color:#7fb3e0; }
-.equipment-grid{
-  display:grid;
-  grid-template-columns:repeat(2, minmax(0, 1fr));
-  gap:clamp(24px, 3vw, 36px);
-}
-.equip-card--vehicles img{ object-position:54% 58%; }
-.equip-card--lighting img{ object-position:72% 50%; }
-.equip-card--generators img{ object-position:52% 54%; }
-.equip-card--production img{ object-position:50% 58%; }
-.equip-card{
-  position:relative;
-  border-radius:var(--radius-lg);
-  overflow:hidden;
-  aspect-ratio:16/10.5;
-  background:linear-gradient(155deg, #17191d 0%, #080a0d 100%);
-  border:1px solid rgba(255,255,255,0.1);
-  box-shadow:0 22px 54px rgba(0,0,0,0.34), inset 0 1px 0 rgba(255,255,255,0.06);
-  isolation:isolate;
-  transform:translateZ(0);
-  transition:transform 360ms var(--ease), box-shadow 360ms var(--ease), border-color 360ms var(--ease);
-}
-.equip-card img{
-  position:absolute; inset:0;
-  width:100%; height:100%; object-fit:cover;
-  filter:saturate(0.9) contrast(1.08) brightness(0.86);
-  transform:scale(1.01);
-  transition:transform 400ms var(--ease), filter 400ms var(--ease);
-}
-.equip-card:hover{
-  transform:translateY(-6px);
-  border-color:rgba(255,255,255,0.18);
-  box-shadow:0 32px 74px rgba(0,0,0,0.44), inset 0 1px 0 rgba(255,255,255,0.08);
-}
-.equip-card:hover img{
-  transform:scale(1.075);
-  filter:saturate(0.96) contrast(1.12) brightness(0.92);
-}
-.equip-card::before{
-  content:'';
-  position:absolute; inset:0;
-  background:
-    radial-gradient(ellipse at 50% 24%, rgba(255,255,255,0.08), transparent 36%),
-    linear-gradient(180deg, rgba(4,6,9,0.08) 0%, rgba(4,6,9,0.18) 36%, rgba(4,6,9,0.86) 100%),
-    linear-gradient(90deg, rgba(0,0,0,0.34), transparent 42%, rgba(0,0,0,0.24));
-  z-index:1;
-  transition:opacity 360ms var(--ease), background 360ms var(--ease);
-}
-.equip-card::after{
-  content:'';
-  position:absolute;
-  inset:12px;
-  z-index:2;
-  border:1px solid rgba(255,255,255,0.12);
-  border-radius:var(--radius-md);
-  pointer-events:none;
-  opacity:0;
-  transition:opacity 360ms var(--ease);
-}
-.equip-card:hover::before{
-  background:
-    radial-gradient(ellipse at 50% 24%, rgba(255,255,255,0.1), transparent 38%),
-    linear-gradient(180deg, rgba(4,6,9,0.03) 0%, rgba(4,6,9,0.12) 38%, rgba(4,6,9,0.9) 100%),
-    linear-gradient(90deg, rgba(0,0,0,0.26), transparent 44%, rgba(0,0,0,0.2));
-}
-.equip-card:hover::after{ opacity:1; }
-.equip-card:focus-within{
-  border-color:rgba(255,255,255,0.22);
-  box-shadow:0 32px 74px rgba(0,0,0,0.44), 0 0 0 3px rgba(255,255,255,0.08);
-}
-.equip-placeholder{
-  position:absolute; inset:0;
-  display:flex; align-items:center; justify-content:center;
-  background:
-    radial-gradient(circle at 50% 42%, rgba(255,255,255,0.07), transparent 34%),
-    linear-gradient(145deg, #17191d 0%, #090b0f 100%);
-}
-.equip-placeholder svg{ width:25%; height:25%; opacity:0.32; filter:grayscale(1); }
-.equip-card-label{
-  position:absolute; left:0; right:0; bottom:0; z-index:3;
-  padding:clamp(28px, 3.2vw, 46px);
-  display:flex; align-items:flex-end; justify-content:space-between;
-  gap:clamp(18px, 2vw, 28px);
-  transform:translateY(0);
-  transition:transform 360ms var(--ease);
-}
-.equip-card-label h3{
-  font-size:clamp(1.15rem, 1rem + 0.6vw, 1.58rem);
-  line-height:1.04;
-  font-weight:800;
-  letter-spacing:0;
-  max-width:12ch;
-  text-shadow:0 8px 28px rgba(0,0,0,0.55);
-}
-.equip-card-label svg{
-  width:34px;
-  height:34px;
-  flex-shrink:0;
-  padding:8px;
-  border-radius:999px;
-  background:rgba(255,255,255,0.1);
-  border:1px solid rgba(255,255,255,0.16);
-  box-shadow:0 10px 24px rgba(0,0,0,0.24);
-  transition:transform 360ms var(--ease), background 360ms var(--ease), border-color 360ms var(--ease);
-}
-.equip-card:hover .equip-card-label{ transform:translateY(-4px); }
-.equip-card:hover .equip-card-label svg{
-  transform:translate(4px,-4px);
-  background:rgba(255,255,255,0.16);
-  border-color:rgba(255,255,255,0.28);
-}
-.equipment-cta{ text-align:center; margin-top:var(--space-header); }
-
-/* ==========================================================================
-   10. WHY CHOOSE US
+   9. WHY CHOOSE US
    ========================================================================== */
 .why{ background:var(--color-bg-light); }
 .why-header{ max-width:680px; margin-bottom:calc(var(--space-header) * 0.9); }
@@ -850,7 +692,7 @@ a:focus-visible,button:focus-visible,input:focus-visible{
 .why-card p{ color:var(--color-text-muted); font-size:clamp(0.94rem, 0.9rem + 0.12vw, 1rem); line-height:1.72; max-width:32ch; }
 
 /* ==========================================================================
-   11. CTA
+   10. CTA
    ========================================================================== */
 .cta{
   background:var(--color-primary);
@@ -875,7 +717,7 @@ a:focus-visible,button:focus-visible,input:focus-visible{
 }
 
 /* ==========================================================================
-   12. FOOTER
+   11. FOOTER
    ========================================================================== */
 .site-footer{
   background:var(--color-black);
@@ -922,14 +764,12 @@ a:focus-visible,button:focus-visible,input:focus-visible{
 }
 
 /* ==========================================================================
-   13. RESPONSIVE - TABLET
+   12. RESPONSIVE - TABLET
    ========================================================================== */
 @media (max-width: 1024px){
   .about-grid{ grid-template-columns:1fr; gap:clamp(52px, 7vw, 76px); }
   .about-media{ aspect-ratio:16/10; max-width:860px; }
   .about-body{ max-width:720px; justify-self:start; padding-block:0; }
-  .about-body h2{ max-width:16ch; }
-  .equipment-grid{ grid-template-columns:repeat(2, minmax(0, 1fr)); gap:clamp(22px, 4vw, 32px); }
   .why-grid{ grid-template-columns:repeat(2, 1fr); }
   .footer-top{ grid-template-columns:1fr 1fr; gap:clamp(42px, 6vw, 64px); }
 }
@@ -958,7 +798,7 @@ a:focus-visible,button:focus-visible,input:focus-visible{
 }
 
 /* ==========================================================================
-   14. RESPONSIVE - MOBILE
+   13. RESPONSIVE - MOBILE
    ========================================================================== */
 @media (max-width: 600px){
   :root{
@@ -1002,20 +842,16 @@ a:focus-visible,button:focus-visible,input:focus-visible{
     min-height:75vh;
     min-height:75svh;
   }
-  .hero-media img{ object-position:60% 52%; transform:scale(1.1); }
+  .hero-media img{ object-position:66% 52%; transform:scale(1.08); }
   .hero-media::after{
     background:
-      radial-gradient(ellipse at 54% 38%, rgba(255,255,255,0.02) 0%, rgba(4,7,11,0.28) 35%, rgba(2,4,7,0.76) 100%),
-      linear-gradient(90deg, rgba(2,5,10,0.88) 0%, rgba(4,8,14,0.62) 46%, rgba(4,8,14,0.28) 100%),
-      linear-gradient(180deg, rgba(3,6,10,0.76) 0%, rgba(3,6,10,0.22) 26%, rgba(2,4,7,0.92) 100%);
+      radial-gradient(ellipse at 58% 38%, rgba(255,255,255,0.035) 0%, rgba(4,7,11,0.18) 35%, rgba(2,4,7,0.64) 100%),
+      linear-gradient(90deg, rgba(2,5,10,0.82) 0%, rgba(4,8,14,0.54) 47%, rgba(4,8,14,0.2) 100%),
+      linear-gradient(180deg, rgba(3,6,10,0.66) 0%, rgba(3,6,10,0.14) 26%, rgba(2,4,7,0.82) 100%);
   }
   .hero-content{ padding-block: clamp(92px,18svh,118px) clamp(52px,8svh,68px); }
   .hero-text{ max-width:100%; }
-  .hero-eyebrow{ margin-bottom:18px; gap:10px; }
-  .hero-eyebrow .rule{ width:34px; }
-  .hero-eyebrow span{ font-size:0.68rem; letter-spacing:0.13em; }
-  .hero h1{ font-size:clamp(2.12rem, 10.2vw, 2.82rem); line-height:0.98; margin-bottom:22px; max-width:10.5ch; }
-  .hero p{ font-size:clamp(0.98rem, 3.7vw, 1.08rem); line-height:1.58; margin-bottom:36px; max-width:30ch; }
+  .hero h1{ font-size:clamp(2.36rem, 10.2vw, 3rem); line-height:0.98; margin-bottom:34px; max-width:11.5ch; }
   .hero-actions{ flex-direction:column; align-items:stretch; }
   .hero-actions .btn{ width:100%; }
 
@@ -1039,25 +875,13 @@ a:focus-visible,button:focus-visible,input:focus-visible{
   .about-media{ aspect-ratio:4/3; border-radius:var(--radius-md); }
   .about-media::before{ inset:8px; border-radius:var(--radius-sm); }
   .about-body::before{ display:none; }
-  .about-body h2, .equipment-header h2, .why-header h2, .cta h2{ max-width:100%; }
-  .about-body h2{ font-size:clamp(2rem, 9vw, 2.62rem); margin-bottom:30px; }
+  .why-header h2, .cta h2{ max-width:100%; }
   .about-body p{ font-size:1rem; line-height:1.78; max-width:100%; }
   .about-body p + p{ margin-top:1.08em; }
   .about-signoff{ margin-top:38px; gap:16px; }
   .about-signoff .line{ width:44px; }
 
-  .equipment-grid{ grid-template-columns:1fr; gap:20px; }
-  .equip-card{ aspect-ratio:16/10.8; border-radius:var(--radius-md); }
-  .equip-card::after{ inset:8px; border-radius:var(--radius-sm); }
-  .equip-card--vehicles img{ object-position:49% 58%; }
-  .equip-card--lighting img{ object-position:72% 50%; }
-  .equip-card--generators img{ object-position:50% 55%; }
-  .equip-card--production img{ object-position:47% 60%; }
-  .equip-card-label{ padding:24px; gap:18px; }
-  .equip-card-label h3{ font-size:clamp(1.14rem, 5vw, 1.42rem); line-height:1.06; }
-  .equip-card-label svg{ width:32px; height:32px; padding:8px; }
-  .equipment-header{ flex-direction:column; align-items:flex-start; gap:24px; }
-  .equipment-header h2, .why-header h2{ font-size:clamp(1.92rem, 8vw, 2.52rem); }
+  .why-header h2{ font-size:clamp(1.92rem, 8vw, 2.52rem); }
 
   .why-grid{ grid-template-columns:1fr; }
   .why-header{ margin-bottom:var(--space-header); }
@@ -1092,19 +916,13 @@ a:focus-visible,button:focus-visible,input:focus-visible{
     min-height:74svh;
   }
   .hero-content{ padding-block:88px 50px; }
-  .hero h1{ font-size:clamp(2rem, 10vw, 2.32rem); margin-bottom:20px; }
-  .hero p{ font-size:0.98rem; margin-bottom:32px; max-width:28ch; }
-  .hero-eyebrow span{ font-size:0.64rem; }
+  .hero h1{ font-size:clamp(2.08rem, 10vw, 2.48rem); margin-bottom:30px; }
   .contact-item,
   .contact-item:nth-child(even){ padding:18px 0; grid-template-columns:26px minmax(0, 1fr); gap:12px; }
   .contact-icon{ width:26px; height:26px; }
   .about-grid{ gap:34px; }
-  .about-body h2,
-  .equipment-header h2,
   .why-header h2{ font-size:clamp(1.78rem, 8vw, 2.12rem); }
   .about-body p{ font-size:0.96rem; line-height:1.72; }
-  .equip-card{ aspect-ratio:4/3.1; }
-  .equip-card-label{ padding:20px; }
   .why-card{ padding:26px 22px; }
   .footer-top{ gap:34px; padding-block:52px 38px; }
 }
@@ -1112,11 +930,8 @@ a:focus-visible,button:focus-visible,input:focus-visible{
 @media (max-width: 340px){
   :root{ --gutter:16px; }
   .hero h1{ font-size:1.92rem; }
-  .hero p{ max-width:26ch; }
   .hero-actions{ gap:12px; }
   .btn{ padding-inline:16px; }
-  .equip-card-label{ padding:18px; }
-  .equip-card-label h3{ font-size:1.08rem; }
   .footer-socials{ gap:10px; }
 }
 </style>
@@ -1134,7 +949,6 @@ a:focus-visible,button:focus-visible,input:focus-visible{
     <nav class="main-nav" aria-label="Primary">
       <a href="#home" class="is-active">Home</a>
       <a href="#about">About</a>
-      <a href="#equipment">Equipment</a>
       <a href="#contact">Contact</a>
     </nav>
 
@@ -1153,7 +967,6 @@ a:focus-visible,button:focus-visible,input:focus-visible{
     <div class="mobile-nav-inner">
       <a href="#home">Home</a>
       <a href="#about">About</a>
-      <a href="#equipment">Equipment</a>
       <a href="#contact">Contact</a>
       <a href="tel:+447789383848" class="btn btn-primary btn-block-mobile">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
@@ -1172,15 +985,12 @@ a:focus-visible,button:focus-visible,input:focus-visible{
     <div class="hero-content">
       <div class="container">
         <div class="hero-text">
-          <div class="hero-eyebrow"><span class="rule" aria-hidden="true"></span><span>Film, TV &amp; Events Equipment</span></div>
-          <h1>Equipment hire for film and TV productions</h1>
-          <p>Reliable equipment, clear communication and support that fits the way productions work.</p>
+          <h1>Equipment Hire for Film, TV &amp; Events</h1>
           <div class="hero-actions">
-            <a href="#equipment" class="btn btn-primary">
-              View equipment
+            <a href="#contact" class="btn btn-primary">
+              Get in Touch
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
             </a>
-            <a href="#contact" class="btn btn-outline">Get in touch</a>
           </div>
         </div>
       </div>
@@ -1253,9 +1063,8 @@ a:focus-visible,button:focus-visible,input:focus-visible{
       </div>
       <div class="about-body reveal">
         <span class="eyebrow">About Grigson Hire</span>
-        <h2>Built on experience.<br>Driven by family.</h2>
-        <p>Grigson Hire is a film and TV equipment hire company run by Ned and Billy Grigson.</p>
-        <p>We support productions with reliable kit, clear communication and a practical understanding of what Location Departments need day to day.</p>
+        <p>Grigson Hire is a Film, TV and Events equipment hire company run by Ned and Billy Grigson.</p>
+        <p>We support Film, TV and Events teams with reliable kit, clear communication and a practical understanding of what Location Departments need day to day.</p>
         <p>This has been a long time coming. Over the past year we have spent a lot of time working out how we wanted to do things properly, and why it mattered to us.</p>
         <p>Three years ago, we lost our Dad, <strong>Neil</strong>, who many people in the Film and TV locations world may have known. Starting this company felt like the right way to carry that connection forward and build something in an industry he cared deeply about.</p>
         <p>For us, this is about doing the basics well. Good kit, efficient turnaround, honest service and relationships built properly over time.</p>
@@ -1263,60 +1072,6 @@ a:focus-visible,button:focus-visible,input:focus-visible{
           <span class="line" aria-hidden="true"></span>
           <span>We're just getting started.</span>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="equipment section" id="equipment">
-    <div class="container">
-      <div class="equipment-header reveal">
-        <div>
-          <span class="eyebrow">Equipment we supply</span>
-          <h2>Professional kit. Production ready.</h2>
-        </div>
-        <a href="#contact" class="angle-tag">Ask about hire</a>
-      </div>
-
-      <div class="equipment-grid">
-
-        <article class="equip-card equip-card--vehicles reveal">
-          <img src="grigson-vehicles.png" alt="Grigson Hire Toyota Hilux support vehicle" width="1680" height="945" loading="lazy" decoding="async">
-          <div class="equip-card-label">
-            <h3>Vehicles</h3>
-            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg>
-          </div>
-        </article>
-
-        <article class="equip-card equip-card--lighting reveal">
-          <img src="grigson-lighting-towers.png" alt="Trailer loaded with Grigson Hire lighting towers" width="1680" height="945" loading="lazy" decoding="async">
-          <div class="equip-card-label">
-            <h3>Lighting Towers</h3>
-            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg>
-          </div>
-        </article>
-
-        <article class="equip-card equip-card--generators reveal">
-          <img src="grigson-generator.png" alt="Towable black generator for film and TV production power" width="1536" height="864" loading="lazy" decoding="async">
-          <div class="equip-card-label">
-            <h3>Generators</h3>
-            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg>
-          </div>
-        </article>
-
-        <article class="equip-card equip-card--production reveal">
-          <img src="grigson-production-support.png" alt="Production support flight cases cable ramps and location kit" width="1536" height="864" loading="lazy" decoding="async">
-          <div class="equip-card-label">
-            <h3>Production Support</h3>
-            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg>
-          </div>
-        </article>
-
-      </div>
-      <div class="equipment-cta reveal">
-        <a href="#contact" class="btn btn-primary">
-          View full range
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-        </a>
       </div>
     </div>
   </section>
@@ -1334,7 +1089,7 @@ a:focus-visible,button:focus-visible,input:focus-visible{
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
           </span>
           <h3>Reliable Equipment</h3>
-          <p>Quality kit maintained properly and ready when your production needs it.</p>
+          <p>Quality kit maintained properly and ready when your Film, TV or Events team needs it.</p>
         </div>
 
         <div class="why-card reveal">
@@ -1366,7 +1121,7 @@ a:focus-visible,button:focus-visible,input:focus-visible{
 
   <section class="cta section" id="contact">
     <div class="container">
-      <h2>Need equipment for your next production?</h2>
+      <h2>Need equipment for Film, TV or Events?</h2>
       <div class="cta-actions">
         <a href="tel:+447789383848" class="btn btn-light">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
@@ -1402,7 +1157,6 @@ a:focus-visible,button:focus-visible,input:focus-visible{
       <ul>
         <li><a href="#home">Home</a></li>
         <li><a href="#about">About</a></li>
-        <li><a href="#equipment">Equipment</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
@@ -1472,7 +1226,7 @@ a:focus-visible,button:focus-visible,input:focus-visible{
   });
 
   // Active nav link on scroll (simple section spy)
-  var sections = ['home','about','equipment','contact'].map(function(id){
+  var sections = ['home','about','contact'].map(function(id){
     return document.getElementById(id);
   }).filter(Boolean);
   var navLinks = document.querySelectorAll('.main-nav a, .mobile-nav a[href^="#"]');
